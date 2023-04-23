@@ -8,6 +8,8 @@ while not is_int:
         is_int = True
         if num_dirs >= 20:
             dir_much = input(f"do you want {num_dirs} dirs y/n: ")
+            while dir_much not in ["y", "n"]:
+                dir_much = input(f"for {num_dirs} dirs enter y/n: ")
             if dir_much == "n":
                 is_int = False
             else:
