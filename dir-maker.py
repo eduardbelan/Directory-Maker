@@ -1,7 +1,19 @@
 import os
 
 # Ask User how many dirs
-num_dirs = int(input("num dirs: "))
+is_int = False
+while not is_int:
+    try:
+        num_dirs = int(input("num dirs: "))
+        is_int = True
+        if num_dirs >= 20:
+            dir_much = input(f"do you want {num_dirs} dirs y/n: ")
+            if dir_much == "n":
+                is_int = False
+            else:
+                pass
+    except ValueError:
+        print("only num input valid")
 
 # Loop to make dirs
 fruit_loops = 0
