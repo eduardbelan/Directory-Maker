@@ -13,12 +13,12 @@ Bulletproof & Additional Functions
 	- add more file types
 	- check user input
 
-* File Name
+*DONE* File Name
 	- certain symbols are not allowed
 	- don't allow empty spaces between words
 	- check if file name exists, if yes: other name prompt
 
-* Making Files
+*DONE* Making Files
 	- after making one file, ask user if they want another file in same dir
 
 * In which dir you want to put dirs

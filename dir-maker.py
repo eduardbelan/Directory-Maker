@@ -36,42 +36,44 @@ for i in range(num_dirs):
             dir_name = input(f"don't use: {forbidden_symbols}\nnew name dir {fruit_loops}: ")
     # Make dir
     os.mkdir(f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}")
-    # Ask User if files
-    file_dirs = input("need files y/n: ").lower()
-    # Check user input for y/n
-    while file_dirs not in ["y", "n"]:
-        file_dirs = input("invalid input, enter y/n for file: ")
 
-    if file_dirs == "n":
-        pass
-    else:
-        # Ask User file type
-        what_file = input("type file txt/py/html/css/js: ").lower()
-        # Check user input for file type
-        while what_file not in ["txt", "py", "html", "css", "js"]:
-            what_file = input(f"invalid input, choose a file type from {file_types}\nenter file type: ")
-        # Ask User file name
-        file_name = input("name file: ")
-        if what_file == "txt":
-            # Make file txt
-            file_path = f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.txt"
+    # File counter
+    file_count = 0
+    # Ask user for multiple file creation
+    while True:
+        # Ask User if files
+        file_dirs = input(f"files created in this dir {file_count}\n"
+                          f"need file y/n: ").lower()
+        # Check user input for y/n
+        while file_dirs not in ["y", "n"]:
+            file_dirs = input("invalid input, enter y/n for file: ")
+
+        if file_dirs == "n":
+            file_count = 0
+            break
+        else:
+            # Ask User file type
+            file_type = input("type file txt/py/html/css/js: ").lower()
+            # Check user input for file type
+            while file_type not in ["txt", "py", "html", "css", "js"]:
+                file_type = input(f"invalid input, choose a file type from {file_types}\nenter file type: ")
+            # Ask User file name
+            file_name = input("name file: ")
+            # Check for forbidden symbols in file name
+            while any(symbol in file_name for symbol in forbidden_symbols):
+                file_name = input(f"don't use: {forbidden_symbols}\nnew name file in {dir_name}: ")
+            # Check if file name already exists
+            while os.path.exists(f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.{file_type}"):
+                file_name = input(f"'{file_name}' already exists.\nnew name file in {dir_name}: ")
+                # Check for forbidden symbols
+                while any(symbol in file_name for symbol in forbidden_symbols):
+                    file_name = input(f"don't use: {forbidden_symbols}\nnew name file in {dir_name}: ")
+            # Make file
+            file_path = f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.{file_type}"
             open(file_path, "a").close()
-        elif what_file == "py":
-            # Make file py
-            file_path = f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.py"
-            open(file_path, "a").close()
-        elif what_file == "html":
-            # Make file html
-            file_path = f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.html"
-            open(file_path, "a").close()
-        elif what_file == "css":
-            # Make file css
-            file_path = f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.css"
-            open(file_path, "a").close()
-        elif what_file == "js":
-            # Make file js
-            file_path = f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.js"
-            open(file_path, "a").close()
+            # Add file to file counter
+            file_count += 1
+
 
 # Snippets
 # make directory
