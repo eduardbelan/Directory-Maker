@@ -21,7 +21,7 @@ Bulletproof & Additional Functions
 *DONE* Making Files
 	- after making one file, ask user if they want another file in same dir
 
-* In which dir you want to put dirs
+*DONE* In which dir you want to put dirs
 	- potentially desktop, pictures, etc.
 	- prompt a reminder to check path and if necessary adjust (in program or in prompt?)
 
@@ -30,4 +30,7 @@ Bulletproof & Additional Functions
 		- Current Path
 		- Directories
 		- Files
+
+* Add list of dirs already created and show in prompt when making another dir
+	- same for files in one dir, show list with all created files in prompt
 

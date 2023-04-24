@@ -1,5 +1,10 @@
 import os
 
+# Notify user to check path & show current path
+current_path = os.getcwd()
+print(f"\nNOTE: Check file path first and adjust if necessary.\n"
+      f"Current Path: {current_path}\n")
+
 # Ask User how many dirs
 is_int = False
 while not is_int:
