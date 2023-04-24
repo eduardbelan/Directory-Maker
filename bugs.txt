@@ -6,10 +6,10 @@ Bulletproof & Additional Functions
 	- don't allow empty spaces between words
 	- check if dir name exists, if yes: other name prompt
 
-* Ask for files
-	- need files y/n - check user input for y or n
+*DONE* Ask for files
+	- check user input for y or n
 
-* File Type
+*DONE* File Type
 	- add more file types
 	- check user input
 
