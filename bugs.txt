@@ -1,7 +1,7 @@
 Bulletproof & Additional Functions
 ==================================
 
-* Naming Directories
+*DONE* Naming Directories
 	- certain symbols are not allowed
 	- don't allow empty spaces between words
 	- check if dir name exists, if yes: other name prompt
