@@ -1,0 +1,33 @@
+Bulletproof & Additional Functions
+==================================
+
+* Naming Directories
+	- certain symbols are not allowed
+	- don't allow empty spaces between words
+	- check if dir name exists, if yes: other name prompt
+
+* Ask for files
+	- need files y/n - check user input for y or n
+
+* File Type
+	- add more file types
+	- check user input
+
+* File Name
+	- certain symbols are not allowed
+	- don't allow empty spaces between words
+	- check if file name exists, if yes: other name prompt
+
+* Making Files
+	- after making one file, ask user if they want another file in same dir
+
+* In which dir you want to put dirs
+	- potentially desktop, pictures, etc.
+	- prompt a reminder to check path and if necessary adjust (in program or in prompt?)
+
+* Add Overview at the end
+	- after making all dirs and files, ask user if they want to see an overview showing:
+		- Current Path
+		- Directories
+		- Files
+
