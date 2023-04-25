@@ -18,13 +18,10 @@ if happy_path == "n":
     print("\n1. Please adjust path in global variable 'ADJUST_PATH'\n"
           "2. Restart Program")
     sys.exit()
-else:
-    pass
 # Check user input until correct
 while happy_path not in ["y", "n"]:
     happy_path = input(f"Are you happy with this path: {ADJUST_PATH}\n"
                        f"Type y/n: ")
-
     if happy_path == "n":
         print("\n1. Please adjust path in global variable 'ADJUST_PATH'\n"
               "2. Restart Program")
@@ -116,7 +113,6 @@ for i in range(num_dirs):
 #   - Current Path:
 #   - Directories:
 #   - Files:
-
 for i in DIRS_CREATED:
     ADJUST_PATH = f"{ADJUST_PATH}\\{i}"
     for dirpath, dirnames, filenames in os.walk(ADJUST_PATH):
