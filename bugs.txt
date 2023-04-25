@@ -31,6 +31,6 @@ Bulletproof & Additional Functions
 		- Directories
 		- Files
 
-* Add list of dirs already created and show in prompt when making another dir
+*DONE* Add list of dirs already created and show in prompt when making another dir
 	- same for files in one dir, show list with all created files in prompt
 

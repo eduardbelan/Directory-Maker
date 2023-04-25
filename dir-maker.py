@@ -8,6 +8,8 @@ print(f"\nNOTE: Check file path first and adjust if necessary.\n"
 # Global Vars
 FORBIDDEN_SYMBOLS = ['/', '\\', ':', '*', '?', '"', '<', '>', '|', ' ']
 FILE_TYPES = ["txt", "py", "html", "css", "js"]
+DIRS_CREATED = []
+FILES_CREATED = []
 
 # Ask User how many dirs
 is_int = False
@@ -43,7 +45,9 @@ for i in range(num_dirs):
             dir_name = input(f"don't use: {FORBIDDEN_SYMBOLS}\nnew name dir {fruit_loops}: ")
     # Make dir
     os.mkdir(f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}")
-
+    # Show a list of dirs created
+    DIRS_CREATED.append(dir_name)
+    print(f"Directories Created: {DIRS_CREATED}\n")
     # File counter
     file_count = 0
     # Ask user for multiple file creation
@@ -57,7 +61,9 @@ for i in range(num_dirs):
 
         if file_dirs == "n":
             file_count = 0
+            FILES_CREATED = []
             break
+
         else:
             # Ask User file type
             file_type = input("type file txt/py/html/css/js: ").lower()
@@ -75,9 +81,13 @@ for i in range(num_dirs):
                 # Check for forbidden symbols
                 while any(symbol in file_name for symbol in FORBIDDEN_SYMBOLS):
                     file_name = input(f"don't use: {FORBIDDEN_SYMBOLS}\nnew name file in {dir_name}: ")
+
             # Make file
             file_path = f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.{file_type}"
             open(file_path, "a").close()
+            # Show a list of files created
+            FILES_CREATED.append(f"{file_name}.{file_type}")
+            print(f"{FILES_CREATED}")
             # Add file to file counter
             file_count += 1
 
