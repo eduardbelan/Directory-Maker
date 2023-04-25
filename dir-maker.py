@@ -1,15 +1,36 @@
 import os
-
-# Notify user to check path & show current path
-current_path = os.getcwd()
-print(f"\nNOTE: Check file path first and adjust if necessary.\n"
-      f"Current Path: {current_path}\n")
+import sys
 
 # Global Vars
+ADJUST_PATH = "C:\\Users\\eduar\\portfolio-projects"
 FORBIDDEN_SYMBOLS = ['/', '\\', ':', '*', '?', '"', '<', '>', '|', ' ']
 FILE_TYPES = ["txt", "py", "html", "css", "js"]
 DIRS_CREATED = []
 FILES_CREATED = []
+
+# Notify user to check path & show current path
+# Ask user if happy with current path
+happy_path = input(f"\nNOTE: Check path first and adjust if necessary.\n\n"
+                   f"Current Path: {ADJUST_PATH}\n\n"
+                   f"Are you happy with this path? y/n: ")
+# Check user input
+if happy_path == "n":
+    print("\n1. Please adjust path in global variable 'ADJUST_PATH'\n"
+          "2. Restart Program")
+    sys.exit()
+else:
+    pass
+# Check user input until correct
+while happy_path not in ["y", "n"]:
+    happy_path = input(f"Are you happy with this path: {ADJUST_PATH}\n"
+                       f"Type y/n: ")
+
+    if happy_path == "n":
+        print("\n1. Please adjust path in global variable 'ADJUST_PATH'\n"
+              "2. Restart Program")
+        sys.exit()
+    else:
+        pass
 
 # Ask User how many dirs
 is_int = False
@@ -38,13 +59,13 @@ for i in range(num_dirs):
     while any(symbol in dir_name for symbol in FORBIDDEN_SYMBOLS):
         dir_name = input(f"don't use: {FORBIDDEN_SYMBOLS}\nnew name dir {fruit_loops}: ")
     # Check if dir name already exists
-    while os.path.exists(f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}"):
+    while os.path.exists(f"{ADJUST_PATH}\\{dir_name}"):
         dir_name = input(f"'{dir_name}' already exists.\nnew name dir {fruit_loops}: ")
         # Check for forbidden symbols
         while any(symbol in dir_name for symbol in FORBIDDEN_SYMBOLS):
             dir_name = input(f"don't use: {FORBIDDEN_SYMBOLS}\nnew name dir {fruit_loops}: ")
     # Make dir
-    os.mkdir(f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}")
+    os.mkdir(f"{ADJUST_PATH}\\{dir_name}")
     # Show a list of dirs created
     DIRS_CREATED.append(dir_name)
     print(f"Directories Created: {DIRS_CREATED}\n")
@@ -76,14 +97,14 @@ for i in range(num_dirs):
             while any(symbol in file_name for symbol in FORBIDDEN_SYMBOLS):
                 file_name = input(f"don't use: {FORBIDDEN_SYMBOLS}\nnew name file in {dir_name}: ")
             # Check if file name already exists
-            while os.path.exists(f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.{file_type}"):
+            while os.path.exists(f"{ADJUST_PATH}\\{dir_name}\\{file_name}.{file_type}"):
                 file_name = input(f"'{file_name}' already exists.\nnew name file in {dir_name}: ")
                 # Check for forbidden symbols
                 while any(symbol in file_name for symbol in FORBIDDEN_SYMBOLS):
                     file_name = input(f"don't use: {FORBIDDEN_SYMBOLS}\nnew name file in {dir_name}: ")
 
             # Make file
-            file_path = f"C:\\Users\\eduar\\portfolio-projects\\{dir_name}\\{file_name}.{file_type}"
+            file_path = f"{ADJUST_PATH}\\{dir_name}\\{file_name}.{file_type}"
             open(file_path, "a").close()
             # Show a list of files created
             FILES_CREATED.append(f"{file_name}.{file_type}")
@@ -91,3 +112,16 @@ for i in range(num_dirs):
             # Add file to file counter
             file_count += 1
 
+# Show user a structure of all dirs and files created in this format:
+#   - Current Path:
+#   - Directories:
+#   - Files:
+
+for i in DIRS_CREATED:
+    ADJUST_PATH = f"{ADJUST_PATH}\\{i}"
+    for dirpath, dirnames, filenames in os.walk(ADJUST_PATH):
+        print(f"Current Path: ", dirpath)
+        print(f"Directories: ", dirnames)
+        print(f"Files: ", filenames)
+        print()
+    ADJUST_PATH = "C:\\Users\\eduar\\portfolio-projects"
