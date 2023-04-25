@@ -25,7 +25,7 @@ Bulletproof & Additional Functions
 	- potentially desktop, pictures, etc.
 	- prompt a reminder to check path and if necessary adjust (in program or in prompt?)
 
-* Add Overview at the end
+*DONE* Add Overview at the end
 	- after making all dirs and files, ask user if they want to see an overview showing:
 		- Current Path
 		- Directories
@@ -34,7 +34,6 @@ Bulletproof & Additional Functions
 *DONE* Add list of dirs already created and show in prompt when making another dir
 	- same for files in one dir, show list with all created files in prompt
 
-* At the beginning ask user if happy with current path.
+*DONE* At the beginning ask user if happy with current path.
 	- if user happy keep going
 	- if user not happy, prompt "Please adjust path" and end program
-	
