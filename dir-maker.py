@@ -1,5 +1,6 @@
 import os
 import sys
+from art import logo
 
 # Global Vars
 ADJUST_PATH = "C:\\Users\\eduar\\portfolio-projects"
@@ -10,6 +11,7 @@ FILES_CREATED = []
 
 # Notify user to check path & show current path
 # Ask user if happy with current path
+print(logo)
 happy_path = input(f"\nNOTE: Check path first and adjust if necessary.\n\n"
                    f"Current Path: {ADJUST_PATH}\n\n"
                    f"Are you happy with this path? y/n: ")
